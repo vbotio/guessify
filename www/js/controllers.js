@@ -54,45 +54,45 @@ angular.module('starter.controllers', [])
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
       img: "http://goo.gl/RtTSKc",
-      authorPhoto: "http://lorempixel.com/50/50/people/3/",
-      author: "Vitor",
-      datePosted: "27/08/2016",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Vitor Boccio",
+      datePosted: "1 dia atrás",
       thumbsUp: "245",
       thumbsDown: "200"
     },
     {
       title: "Brasil será campeão olimpico de 2016",
       img: "http://goo.gl/VlmOJc",
-      authorPhoto: "http://lorempixel.com/50/50/people/3/",
-      author: "Thiago",
-      datePosted: "15/03/2017",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Thiago Boccio",
+      datePosted: "2 dias atrás",
       thumbsUp: "245",
       thumbsDown: "200"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
       img: "http://goo.gl/RtTSKc",
-      authorPhoto: "http://lorempixel.com/50/50/people/3/",
-      author: "Vitor",
-      datePosted: "27/08/2016",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Vitor Boccio",
+      datePosted: "1 dia atrás",
       thumbsUp: "245",
       thumbsDown: "200"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
       img: "http://goo.gl/RtTSKc",
-      authorPhoto: "http://lorempixel.com/50/50/people/3/",
-      author: "Vitor",
-      datePosted: "27/08/2016",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Vitor Boccio",
+      datePosted: "1 dia atrás",
       thumbsUp: "245",
       thumbsDown: "200"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
       img: "http://goo.gl/RtTSKc",
-      authorPhoto: "http://lorempixel.com/50/50/people/3/",
-      author: "Vitor",
-      datePosted: "27/08/2016",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Vitor Boccio",
+      datePosted: "1 dia atrás",
       thumbsUp: "245",
       thumbsDown: "200"
     }
