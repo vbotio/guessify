@@ -58,7 +58,9 @@ angular.module('starter.controllers', [])
       author: "Vitor Boccio",
       datePosted: "1 dia atrás",
       thumbsUp: "245",
-      thumbsDown: "200"
+      thumbsDown: "200",
+      comments: "123",
+      id: "1"
     },
     {
       title: "Brasil será campeão olimpico de 2016",
@@ -67,7 +69,9 @@ angular.module('starter.controllers', [])
       author: "Thiago Boccio",
       datePosted: "2 dias atrás",
       thumbsUp: "245",
-      thumbsDown: "200"
+      thumbsDown: "200",
+      comments: "123",
+      id: "2"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
@@ -76,7 +80,9 @@ angular.module('starter.controllers', [])
       author: "Vitor Boccio",
       datePosted: "1 dia atrás",
       thumbsUp: "245",
-      thumbsDown: "200"
+      thumbsDown: "200",
+      comments: "123",
+      id: "3"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
@@ -85,7 +91,9 @@ angular.module('starter.controllers', [])
       author: "Vitor Boccio",
       datePosted: "1 dia atrás",
       thumbsUp: "245",
-      thumbsDown: "200"
+      thumbsDown: "200",
+      comments: "123",
+      id: "4"
     },
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
@@ -94,7 +102,9 @@ angular.module('starter.controllers', [])
       author: "Vitor Boccio",
       datePosted: "1 dia atrás",
       thumbsUp: "245",
-      thumbsDown: "200"
+      thumbsDown: "200",
+      comments: "123",
+      id: "5"
     }
   ]
 })
