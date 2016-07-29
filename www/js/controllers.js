@@ -42,14 +42,6 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
-  // $scope.playlists = [
-  //   { title: 'Reggae', id: 1 },
-  //   { title: 'Chillaaaaaaa', id: 2 },
-  //   { title: 'Dubstep', id: 3 },
-  //   { title: 'Indie', id: 4 },
-  //   { title: 'Rap', id: 5 },
-  //   { title: 'Cowbell', id: 6 }
-  // ];
   $scope.cards = [
     {
       title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
@@ -110,4 +102,20 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+  $scope.cards = [
+    {
+      title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
+      img: "http://goo.gl/RtTSKc",
+      authorPhoto: "http://lorempixel.com/40/40/people/4/",
+      author: "Vitor Boccio",
+      datePosted: "1 dia atrás",
+      thumbsUp: "245",
+      thumbsDown: "200",
+      comments: "123",
+      id: "1",
+      comments: {
+        text: "Eu não acho que essa previsão vai se tornar verdade"
+      }
+    }
+  ]
 });

@@ -1,5 +1,23 @@
-<ion-view view-title="Playlist">
+<ion-view view-title="Title mudar">
   <ion-content>
-    <h1>Playlist</h1>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+    <ion-list>
+	    <ion-item ng-repeat="card in cards" href="#/app/playlists/{{card.id}}" class="card-wrapper">
+	        <div class="card" style="background: url({{card.img}}); background-size:100%;">
+	        	<div class="inner-wrapper">
+		        	<img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
+		        	<p class="author">{{card.author}} <br>
+									  {{card.datePosted}}
+		        	</p>
+		        	<p class="essay">{{card.title}}</p>
+					<div class="footWrapper">
+						<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
+						<div class="comments">{{card.comments}}</div>
+						<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
+					</div>	
+	        	</div>
+	        </div>
+      	</ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
