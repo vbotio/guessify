@@ -102,20 +102,25 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
-  $scope.cards = [
-    {
-      title: "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
-      img: "http://goo.gl/RtTSKc",
-      authorPhoto: "http://lorempixel.com/40/40/people/4/",
-      author: "Vitor Boccio",
-      datePosted: "1 dia atrás",
-      thumbsUp: "245",
-      thumbsDown: "200",
-      comments: "123",
-      id: "1",
-      comments: {
-        text: "Eu não acho que essa previsão vai se tornar verdade"
-      }
-    }
-  ]
+    $scope.cards = [
+        {
+            "title": "O dolar vai chegar a R$4,00 no dia 14 de setembro de 2015",
+            "img": "http://goo.gl/RtTSKc",
+            "authorPhoto": "http://lorempixel.com/40/40/people/4/",
+            "author": "Vitor Boccio",
+            "datePosted": "1 dia atrás",
+            "thumbsUp": "245",
+            "thumbsDown": "200",
+            "commentsNum": "123",
+            "id": "1",
+            "comments": [
+                {
+                    "authorCommentPhoto": "http://lorempixel.com/40/40/people/5/",
+                    "author": "Fulano de tal",
+                    "text": "essa parada não vai acontecer não hein",
+                    "dateCommented": "01/08/2016"
+                }
+            ]
+        }
+    ]
 });

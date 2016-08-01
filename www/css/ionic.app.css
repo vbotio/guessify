@@ -9906,3 +9906,16 @@ a.button {
           .card-wrapper a.item-content .card .inner-wrapper .footWrapper .thumbsDown {
             color: #ff4365;
             font-weight: bolder; }
+    .card-wrapper a.item-content .commentsWrapper {
+      float: left;
+      margin: 0 10px;
+      width: 100%; }
+      .card-wrapper a.item-content .commentsWrapper .head {
+        display: flex; }
+        .card-wrapper a.item-content .commentsWrapper .head img.profilePhoto {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px; }
+        .card-wrapper a.item-content .commentsWrapper .head input {
+          flex: 2;
+          margin-right: 20px; }

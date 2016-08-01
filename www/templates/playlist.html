@@ -12,9 +12,25 @@
 		        	<p class="essay">{{card.title}}</p>
 					<div class="footWrapper">
 						<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
-						<div class="comments">{{card.comments}}</div>
+						<div class="comments">{{card.commentsNum}}</div>
 						<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
 					</div>	
+	        	</div>
+	        </div>
+	        <div class="commentsWrapper">
+	        	<div class="head">
+	        		<img class="profilePhoto" src="http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png" alt="avatar photo">
+	        		<input type="text" placeholder="Write a comment...">
+	        	</div>
+	        	<div class="commentsContainer">
+	        		<ul>
+	        			<li ng-repeat="comment in card.comments" style="color:black;">
+	        				{{comment.authorCommentPhoto}} <br>
+	        				{{comment.author}} <br>
+	        				{{comment.text}} <br>
+	        				{{comment.dateCommented}}
+	        			</li>
+	        		</ul>
 	        	</div>
 	        </div>
       	</ion-item>

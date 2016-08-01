@@ -122,5 +122,22 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 				}
 			}
 		}
+		.commentsWrapper {
+			float:left;
+			margin:0 10px;
+			width:100%;
+			.head {
+				display: flex;
+				img.profilePhoto {
+					width:30px;
+					height:30px;
+					margin-right:10px;
+				}
+				input {
+					flex:2;
+					margin-right: 20px;
+				}
+			}
+		}
 	}
 }
