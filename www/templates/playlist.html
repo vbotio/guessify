@@ -25,10 +25,14 @@
 	        	<div class="commentsContainer">
 	        		<ul>
 	        			<li ng-repeat="comment in card.comments" style="color:black;">
-	        				{{comment.authorCommentPhoto}} <br>
-	        				{{comment.author}} <br>
-	        				{{comment.text}} <br>
-	        				{{comment.dateCommented}}
+							<img src="{{comment.authorCommentPhoto}}" alt="">
+	        				<div class="right">
+	        					<p><a href="#/userProfile/:id">{{comment.author}}</a></p>
+	        					<p>{{comment.text}}</p>
+	        					<small>{{comment.dateCommented}}</small>
+	        				</div>
+	        				 
+	        				
 	        			</li>
 	        		</ul>
 	        	</div>

@@ -115,10 +115,28 @@ angular.module('starter.controllers', [])
             "id": "1",
             "comments": [
                 {
+                    "authorCommentPhoto": "http://lorempixel.com/40/40/people/6/",
+                    "author": "Beltrano de tal",
+                    "text": "Ah sei la, acho que nao vai, sei lá... dificil",
+                    "dateCommented": "8 hours ago"
+                },
+                {
                     "authorCommentPhoto": "http://lorempixel.com/40/40/people/5/",
                     "author": "Fulano de tal",
-                    "text": "essa parada não vai acontecer não hein",
-                    "dateCommented": "01/08/2016"
+                    "text": "essa parada não vai acontecer não hein vixi epa opa vexe eita",
+                    "dateCommented": "3 days ago"
+                },
+                {
+                    "authorCommentPhoto": "http://lorempixel.com/40/40/people/7/",
+                    "author": "Ciclano de tal",
+                    "text": "também acho que vai acontecer isso aí!",
+                    "dateCommented": "26/03/1990"
+                },
+                {
+                    "authorCommentPhoto": "http://lorempixel.com/40/40/people/8/",
+                    "author": "José Etvaldo",
+                    "text": "ahuahuahuahauhauhauhauah",
+                    "dateCommented": "2 minutes ago"
                 }
             ]
         }

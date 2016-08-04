@@ -126,6 +126,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 			float:left;
 			margin:0 10px;
 			width:100%;
+			padding-right: 10px;
 			.head {
 				display: flex;
 				img.profilePhoto {
@@ -136,6 +137,28 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 				input {
 					flex:2;
 					margin-right: 20px;
+				}
+			}
+			.commentsContainer {
+				ul {
+					li {
+						margin-bottom: 5px;
+						border-bottom: 1px solid #ccc;
+						padding-bottom: 10px;
+						img {
+							float:left;
+							margin-right: 5px;
+							width: 30px;
+						}
+						.right {
+							p {
+								white-space: normal;
+							}
+							small {
+								margin-left:35px;
+							}
+						}
+					}
 				}
 			}
 		}

@@ -9909,7 +9909,8 @@ a.button {
     .card-wrapper a.item-content .commentsWrapper {
       float: left;
       margin: 0 10px;
-      width: 100%; }
+      width: 100%;
+      padding-right: 10px; }
       .card-wrapper a.item-content .commentsWrapper .head {
         display: flex; }
         .card-wrapper a.item-content .commentsWrapper .head img.profilePhoto {
@@ -9919,3 +9920,15 @@ a.button {
         .card-wrapper a.item-content .commentsWrapper .head input {
           flex: 2;
           margin-right: 20px; }
+      .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li {
+        margin-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px; }
+        .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li img {
+          float: left;
+          margin-right: 5px;
+          width: 30px; }
+        .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li .right p {
+          white-space: normal; }
+        .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li .right small {
+          margin-left: 35px; }
