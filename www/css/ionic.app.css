@@ -9863,7 +9863,8 @@ a.button {
           text-align: center;
           font-weight: 500;
           font-size: 15px;
-          margin-top: -45px; }
+          margin-top: -45px;
+          width: 100%; }
         .card-wrapper a.item-content .card .inner-wrapper .footWrapper {
           position: absolute;
           left: 0;
@@ -9931,4 +9932,5 @@ a.button {
         .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li .right p {
           white-space: normal; }
         .card-wrapper a.item-content .commentsWrapper .commentsContainer ul li .right small {
-          margin-left: 35px; }
+          margin-left: 35px;
+          font-size: 11px; }

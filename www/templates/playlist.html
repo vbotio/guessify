@@ -1,19 +1,19 @@
-<ion-view view-title="Title mudar">
+<ion-view view-title="Detail">
   <ion-content>
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
     <ion-list>
-	    <ion-item ng-repeat="card in cards" href="#/app/playlists/{{card.id}}" class="card-wrapper">
-	        <div class="card" style="background: url({{card.img}}); background-size:100%;">
+	    <ion-item ng-repeat="cardDetail in cardDetail" href="#/app/playlists/{{cardDetail.id}}" class="card-wrapper">
+	        <div class="card" style="background: url({{cardDetail.img}}); background-size:100%;">
 	        	<div class="inner-wrapper">
-		        	<img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
-		        	<p class="author">{{card.author}} <br>
-									  {{card.datePosted}}
+		        	<img ng-src="{{cardDetail.authorPhoto}}" alt="Author profile photo">
+		        	<p class="author">{{cardDetail.author}} <br>
+									  {{cardDetail.datePosted}}
 		        	</p>
-		        	<p class="essay">{{card.title}}</p>
+		        	<p class="essay">{{cardDetail.title}}</p>
 					<div class="footWrapper">
-						<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
-						<div class="comments">{{card.commentsNum}}</div>
-						<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
+						<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{cardDetail.thumbsUp}}</div>
+						<div class="comments">{{cardDetail.commentsNum}}</div>
+						<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{cardDetail.thumbsDown}}</div>
 					</div>	
 	        	</div>
 	        </div>
@@ -24,15 +24,13 @@
 	        	</div>
 	        	<div class="commentsContainer">
 	        		<ul>
-	        			<li ng-repeat="comment in card.comments" style="color:black;">
+	        			<li ng-repeat="comment in cardDetail.comments" style="color:black;">
 							<img src="{{comment.authorCommentPhoto}}" alt="">
 	        				<div class="right">
 	        					<p><a href="#/userProfile/:id">{{comment.author}}</a></p>
 	        					<p>{{comment.text}}</p>
 	        					<small>{{comment.dateCommented}}</small>
 	        				</div>
-	        				 
-	        				
 	        			</li>
 	        		</ul>
 	        	</div>

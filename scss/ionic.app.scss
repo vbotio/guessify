@@ -76,6 +76,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 					font-weight:500;
 					font-size:15px;
 					margin-top: -45px;
+					width: 100%;
 				}
 				.footWrapper {
 					position:absolute;
@@ -156,6 +157,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 							}
 							small {
 								margin-left:35px;
+								font-size: 11px;
 							}
 						}
 					}
