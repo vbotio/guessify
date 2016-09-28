@@ -3,10 +3,31 @@
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
     <div class="row responsive-sm">
     	<div class="col wrap">
-    		<div class="bigProfilePic" style="background:url({{bigProfilePic}}) center center no-repeat;background-size:100%;">
-    			
-    		</div> 
+    		<div class="bigProfilePic" style="background:url({{profileDetail.userPhoto}}) center center no-repeat;background-size:100%;"></div>   
+            <div class="userInfo">
+                <p class="name">{{profileDetail.userName}}</p>
+                <p class="description">{{ profileDetail.userDescription }}</p>
+            </div>
     	</div>
+        <ion-list>
+            <ion-item ng-repeat="card in profileDetailPrevOmens" class="card-wrapper">
+                <div class="card" style="background:url({{ card.img }}); background-size:100%;">
+                    <div class="inner-wrapper">
+                        <img ng-src="{{ card.authorPhoto }}" alt="author profile picture">
+                        <p class="author">
+                            {{ card.author }} <br>
+                            {{ card.datePosted }}
+                        </p>
+                        <p class="essay"> {{ card.title }} </p>
+                        <div class="footWrapper">
+                            <div class="thumbsUp"> <i class="icon ion-arrow-up-c"></i> {{ card.thumbsUp }} </div>
+                            <div class="comments"> {{ card.comments }} </div>
+                            <div class="thumbsDown"> <i class="icon ion-arrow down-c"></i> {{ card.thumbsDown }} </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-item>
+        </ion-list>
     </div>
   </ion-content>
 </ion-view>
