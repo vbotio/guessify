@@ -11,4 +11,4 @@ To start developing in this project, you need to install 4 main dependencies.
 
 After all dependecies installed, you should execute in your prompt
 
-'''npm install'''
+```npm install```
