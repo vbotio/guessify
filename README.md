@@ -9,6 +9,4 @@ To start developing in this project, you need to install 4 main dependencies.
 
 ** 4) [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) **
 
-After all dependecies installed, you should execute in your prompt
-
-```npm install```
+After all dependecies installed, you should execute in your prompt ```npm install```
