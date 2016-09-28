@@ -9968,7 +9968,20 @@ a.button {
       font-weight: bolder; }
     #profile .wrap .userInfo p.description {
       width: 70%;
-      margin: 15px auto; }
+      margin: 15px auto;
+      font-weight: lighter;
+      font-size: 17px; }
+  #profile .wrap .social-icons {
+    float: left;
+    margin: 0 10px; }
+    #profile .wrap .social-icons i {
+      font-size: 22px; }
+    #profile .wrap .social-icons i.ion-social-facebook {
+      color: #3b5998; }
+    #profile .wrap .social-icons i.ion-social-twitter {
+      color: #0084b4; }
+    #profile .wrap .social-icons i.ion-social-instagram {
+      color: #e95950; }
 
 #profile .card-wrapper {
   font-family: "Open sans", sans-serif;

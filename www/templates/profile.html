@@ -8,6 +8,11 @@
                 <p class="name">{{profileDetail.userName}}</p>
                 <p class="description">{{ profileDetail.userDescription }}</p>
             </div>
+            <ul>
+                <li ng-repeat="socialMedia in profileDetailSocialMedia" class="social-icons">
+                    <i class="ion-social-{{socialMedia.name}}"></i>
+                </li>
+            </ul>
     	</div>
         <ion-list>
             <ion-item ng-repeat="card in profileDetailPrevOmens" class="card-wrapper">

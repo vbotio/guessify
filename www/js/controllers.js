@@ -57,11 +57,12 @@ angular.module('starter.controllers', [])
 
 .controller('profileCtrl', function($scope, $http, $rootScope) {
     $scope.profileDetail = [];
-    $scope.profileDetailPrevOmens = []
+    $scope.profileDetailPrevOmens = [];
+    $scope.profileDetailSocialMedia = [];
 
     $http({
         method: "GET",
-        url: "http://www.mocky.io/v2/57ebde9c110000251b2d3672"
+        url: "http://www.mocky.io/v2/57ec1104110000aa212d36a8"
     }).then(function(response){
         $scope.profileDetail = response.data;
         console.log($scope.profileDetail);
@@ -69,5 +70,10 @@ angular.module('starter.controllers', [])
         for (var i in response.data.previousOmen) {
             $scope.profileDetailPrevOmens.push(response.data.previousOmen[i])
         }
+
+        for (var i in response.data.socialMedia) {
+            $scope.profileDetailSocialMedia.push(response.data.socialMedia[i]);
+        }
+
     })
 })

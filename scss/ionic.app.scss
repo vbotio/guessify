@@ -206,6 +206,24 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 			p.description {
 				width:70%;
 				margin:15px auto;
+				font-weight: lighter;
+				font-size:17px;
+			}
+		}
+		.social-icons {
+			float:left;
+			margin:0 10px;
+			i {
+				font-size: 22px;	
+			}
+			i.ion-social-facebook {
+				color:#3b5998;
+			}
+			i.ion-social-twitter {
+				color:#0084b4;
+			}
+			i.ion-social-instagram {
+				color:#e95950;
 			}
 		}	
 	}
