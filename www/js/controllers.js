@@ -60,4 +60,8 @@ angular.module('starter.controllers', [])
         }
         
     })
-});
+})
+
+.controller('profileCtrl', function($scope, $http, $rootScope) {
+    $scope.bigProfilePic = "http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png"
+})

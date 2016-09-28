@@ -166,3 +166,29 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		}
 	}
 }
+
+#profile {
+	.wrap {
+		display: flex;
+		justify-content: center;
+		.bigProfilePic {
+			border-radius:50%;
+			width: 150px;
+			height: 150px;
+			position:relative;
+			border:8px solid white;
+			margin-top: 25px;
+			&:after {
+				content:"";
+				position:absolute;
+				background:$royal;
+				top:-10px;
+				left:-10px;
+				right:-10px;
+				bottom:-10px;
+				border-radius:50%;
+				z-index: -1;
+			}
+		}	
+	}
+}
