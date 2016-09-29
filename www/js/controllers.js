@@ -1,29 +1,21 @@
 angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-    $scope.loginData = {};
-
-    $ionicModal.fromTemplateUrl('templates/login.html', {
-        scope: $scope
-    }).then(function(modal) {
-        $scope.modal = modal;
-    });
-
-    $scope.closeLogin = function() {
-        $scope.modal.hide();
-    };
     
-    $scope.login = function() {
-        $scope.modal.show();
-    };
+})
 
-    $scope.doLogin = function() {
-        console.log('Doing login', $scope.loginData);
+.controller('loginCtrl', function($scope, $http, $rootScope, $location) {
+    $scope.loginData = {};
+    $scope.loginData.name = [];
+    $scope.loginData.password = [];
 
-        $timeout(function() {
-            $scope.closeLogin();
-        }, 1000);
-    };
+    $scope.doLogin = doLogin;
+    
+    function doLogin() {
+        if($scope.loginData.name && $scope.loginData.password != null) {
+            $location.path('/playlists')
+        }    
+    }
 })
 
 .controller('PlaylistsCtrl', function($scope, $http, $rootScope) {

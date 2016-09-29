@@ -69,6 +69,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             }
         }
     })
-
-  $urlRouterProvider.otherwise('/app/playlists');
+    .state('app.login', {
+        url: '/login',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/login.html',
+                controller: 'loginCtrl'
+                
+            }
+        }
+    })
+    // $urlRouterProvider.otherwise('/app/playlists');
+    $urlRouterProvider.otherwise('/app/login');
 });

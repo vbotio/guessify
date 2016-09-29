@@ -24,6 +24,15 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 //include open sans font
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
 
+@font-face {
+    font-family: 'asgaltregular';
+    src: url('../fonts/asgalt-regular-webfont.woff2') format('woff2'),
+         url('../fonts/asgalt-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 .avatar-profile {
 	width:35px;
 	height:35px;
@@ -317,6 +326,35 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 					}
 				}
 			}
+		}
+	}
+}
+#login {
+	background:url('../img/kites_night.png') center center no-repeat;
+	background-size:cover;
+	text-align:center;
+	p {
+		font-family: 'asgaltregular';
+		color:white;
+		position: relative;
+		font-size: 85px;
+		z-index: 2;
+		text-align: center;
+		display: inline-block;
+		margin: 80px auto;
+		border:1px solid red;
+		line-height: 85px;
+		font-weight: bolder;
+	}
+	p::first-letter {
+		color:yellow;
+	}
+	.item {
+		background: transparent;
+		color: white;
+		border: 0;
+		span.input-label, input {
+			color:white;
 		}
 	}
 }
