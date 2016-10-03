@@ -1,26 +1,35 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ionic'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
     
 })
 
-.controller('loginCtrl', function($scope, $http, $rootScope, $location) {
+.controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
     $scope.loginData = {};
-    $scope.loginData.name = [];
-    $scope.loginData.password = [];
+    $scope.loginData.username = null;
+    $scope.loginData.password = null;
 
     $scope.doLogin = doLogin;
     
     function doLogin() {
-        if($scope.loginData.name && $scope.loginData.password != null) {
-            $location.path('/playlists')
-        }    
+        
+        if($scope.loginData.username && $scope.loginData.password) {
+            $state.go('app.playlists')
+        } else {
+            var alertPopup = $ionicPopup.alert({
+                title: 'err',
+                template: 'Usuário ou senha incorreto'
+            });
+            alertPopup.then(function(res) {
+                 
+            })
+        }       
     }
 })
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory) {
     $scope.cards = [];
-
+    $ionicHistory.clearHistory();
     $http({
         method: 'GET',
         url: "http://www.mocky.io/v2/57e976ff0f00007d1f843a91"
