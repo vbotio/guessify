@@ -38,7 +38,6 @@ angular.module('starter.controllers', ['ionic'])
         for (var i in response.data) {
             $scope.cards.push(response.data[i]);
         }
-        console.log($scope.cards)
     })
 
 })
