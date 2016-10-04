@@ -3,7 +3,7 @@
         <img src="http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png" alt="avatar" class="avatar-profile ion-navicon" menu-toggle="left">
     </ion-nav-buttons>
     <ion-nav-buttons side="right" class="item">
-        <h1 class="plus" ng-click="modalNewGuess()"> + </h1>
+      <a href="#/app/newCard"><h1 class="plus"> + </h1></a>
     </ion-nav-buttons>
     <ion-content>
   	    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
@@ -20,7 +20,7 @@
         					<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
         					<div class="comments">{{card.comments}}</div>
         					<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
-        				</div>	
+        				</div>
                 	</div>
                 </div>
             </ion-item>

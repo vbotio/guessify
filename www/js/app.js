@@ -2,7 +2,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
-    
+
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
       cordova.plugins.Keyboard.disableScroll(true);
@@ -75,7 +75,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             'menuContent': {
                 templateUrl: 'templates/login.html',
                 controller: 'loginCtrl'
-                
+
+            }
+        }
+    })
+    .state('app.newCard', {
+        url: '/newCard',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/newCard.html',
+                controller: 'newCardCtrl'
+
             }
         }
     })

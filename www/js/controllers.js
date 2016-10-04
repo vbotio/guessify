@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['ionic'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-    
+
 })
 
 .controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
@@ -10,9 +10,9 @@ angular.module('starter.controllers', ['ionic'])
     $scope.loginData.password = null;
 
     $scope.doLogin = doLogin;
-    
+
     function doLogin() {
-        
+
         if($scope.loginData.username && $scope.loginData.password) {
             $ionicHistory.clearHistory();
             $state.go('app.playlists')
@@ -22,9 +22,9 @@ angular.module('starter.controllers', ['ionic'])
                 template: 'Usuário ou senha incorreto'
             });
             alertPopup.then(function(res) {
-                 
+
             })
-        }       
+        }
     }
 })
 
@@ -44,7 +44,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
     $scope.cardDetail = [];
-    
+
     $http({
         method: "GET",
         url: "http://www.mocky.io/v2/57eac524130000711f63dd76"
@@ -78,3 +78,7 @@ angular.module('starter.controllers', ['ionic'])
 
     })
 })
+.controller('newCardCtrl', function($scope, $http, $rootScope) {
+
+})
+
