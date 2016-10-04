@@ -14,6 +14,7 @@ angular.module('starter.controllers', ['ionic'])
     function doLogin() {
         
         if($scope.loginData.username && $scope.loginData.password) {
+            $ionicHistory.clearHistory();
             $state.go('app.playlists')
         } else {
             var alertPopup = $ionicPopup.alert({

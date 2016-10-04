@@ -9828,6 +9828,10 @@ a.button {
   border-radius: 50%;
   border: 2px solid white; }
 
+.plus {
+  margin-top: -6px !important;
+  color: white; }
+
 .card-wrapper {
   font-family: "Open sans", sans-serif; }
   .card-wrapper a.item-content {
@@ -10087,7 +10091,6 @@ a.button {
     text-align: center;
     display: inline-block;
     margin: 80px auto;
-    border: 1px solid red;
     line-height: 85px;
     font-weight: bolder; }
   #login p::first-letter {

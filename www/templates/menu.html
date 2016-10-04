@@ -9,6 +9,7 @@
         </button> -->
         <img src="http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png" alt="avatar" class="avatar-profile ion-navicon" menu-toggle="left">
       </ion-nav-buttons>
+      
     </ion-nav-bar>
     <ion-nav-view name="menuContent"></ion-nav-view>
   </ion-side-menu-content>
@@ -19,18 +20,16 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="login()">
-          Login
-        </ion-item>
-        <ion-item menu-close href="#/app/search">
-          Busca
-        </ion-item>
-        <ion-item menu-close href="#/app/browse">
-          Browse
-        </ion-item>
         <ion-item menu-close href="#/app/playlists">
           Playlists
         </ion-item>
+        <ion-item menu-close href="#/app/profile">
+          Profile
+        </ion-item>
+        <ion-item menu-close href="#/app/">
+          Logout
+        </ion-item>
+        
       </ion-list>
     </ion-content>
   </ion-side-menu>

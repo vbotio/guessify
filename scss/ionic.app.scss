@@ -39,7 +39,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 	border-radius:50%;
 	border:2px solid white;
 }
-
+.plus {
+	margin-top:-6px!important;
+	color:white;
+}
 .card-wrapper {
 	font-family: "Open sans", sans-serif;
 	a.item-content {
