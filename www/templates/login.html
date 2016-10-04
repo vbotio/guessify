@@ -1,20 +1,26 @@
 <ion-view hide-nav-bar="true">
     <ion-content id="login">
-        <p>GuessUaT</p>
+        <img src="img/logo.png" alt="" width="130" class="logo">
         <form>
             <div class="list">
                 <label class="item item-input">
+                    <i class="icon ion-ios-person-outline"></i>
                     <span class="input-label">Username</span>
                     <input type="text" ng-model="loginData.username">
                 </label>
                 <label class="item item-input">
+                    <i class="icon ion-ios-unlocked-outline"></i>
                     <span class="input-label">Password</span>
                     <input type="password" ng-model="loginData.password">
                 </label>
-                <label class="item">
-                    <button class="button button-block button-positive" type="submit" ng-click="doLogin()">continue with facebook</button>
-                </label>
+                <span class="forgot">Forgot Password</span>
+                <ul class="list">
+                    <li class="item" ng-click="doLogin()">
+                        Sign In
+                    </li>
+                </ul>
             </div>
         </form>
+        <p class="footer">Don't have an account ? <a href="#/app/signup">Sign Up</a></p>
     </ion-content>
 </ion-view>

@@ -1,29 +1,28 @@
-<ion-view view-title="newCard" hide-back-button="true">
-  <ion-nav-buttons class="left">
-    <a href="#/app/playlists"><h1 class="plus">x</h1></a>
-  </ion-nav-buttons>
-  <ion-content>
-
-    <div class="row">
-
-        <div class="col col-25">
-          <img src="http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png" alt="avatar" class="avatar-profile ion-navicon">
-        </div>
-        <div class="col col-75">
-          <form action="">
-
-          <textarea name="something" id="" cols="30" rows="10"></textarea>
-            <div class="row">
-              <div class="col col-100">
-                <button ion-button color="secondary" class="button">Enviar</button>
-              </div>
+<ion-view view-title="new guess" id="newGuess" hide-back-button="true">
+    <ion-nav-buttons>
+        <a href="#/app/playlists" class="button icon-left ion-chevron-left button-clear button-light">Back</a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="row">
+            <div class="col col-25">
+                <img ng-disabled="true" src="http://tilomitra.com/wp-content/uploads/2014/08/avatar-cartoon.png" alt="avatar" class="avatar-profile ion-navicon">
             </div>
-          </form>
-
+            <div class="col col-75">
+                <textarea id="textarea" placeholder="What you think is going to happen in a soon future ?"></textarea>
+                <input type="file" accept="image/x-png, image/gif, image/jpeg" id="image" style="display:none;">
+            </div>
         </div>
-
-    </div>
-
-
-  </ion-content>
+        <label class="labelFile" for="image" data-tap-disabled="true">Illustrate your guess with an awesome image!</label>
+    </ion-content>
+    <ion-footer-bar align-title="left" id="footer">
+        <div class="col">
+            <i class="icon ion-images"></i>
+        </div>
+        <div class="col">
+            <i class="icon ion-ios-at"></i>
+        </div>
+        <div class="col">
+            <button class="button button-royal">send</button>
+        </div>
+    </ion-footer-bar>
 </ion-view>

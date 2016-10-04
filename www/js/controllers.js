@@ -78,7 +78,7 @@ angular.module('starter.controllers', ['ionic'])
 
     })
 })
-.controller('newCardCtrl', function($scope, $http, $rootScope) {
-
+.controller('newCardCtrl', function($scope, $http, $rootScope, $window) {
+    
 })
 
