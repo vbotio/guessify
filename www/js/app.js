@@ -85,7 +85,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
             'menuContent': {
                 templateUrl: 'templates/newCard.html',
                 controller: 'newCardCtrl'
-
+            }
+        }
+    })
+    .state('app.connection', {
+        url: '/badConnection',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/badConnection.html',
+                controller: 'connectionCtrl'
             }
         }
     })
