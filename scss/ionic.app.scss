@@ -422,13 +422,6 @@ i.loading {
 		min-height: 125px;
 		resize: none;
 	}
-	.labelFile {
-		border:1px dashed $royal;
-		width:100%;
-		display: block;
-		padding:30px 15px;
-		text-align:center;
-	}
 	#footer {
 		align-items:center;
 		.col {
@@ -438,9 +431,6 @@ i.loading {
 			}	
 		}
 		button {
-			border:2px solid $royal;
-			background:none;
-			color:$royal;
 			font-weight: bolder;
 			width: 100%;
 		}

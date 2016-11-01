@@ -10159,13 +10159,6 @@ i.loading {
   min-height: 125px;
   resize: none; }
 
-#newGuess .labelFile {
-  border: 1px dashed #886aea;
-  width: 100%;
-  display: block;
-  padding: 30px 15px;
-  text-align: center; }
-
 #newGuess #footer {
   align-items: center; }
   #newGuess #footer .col {
@@ -10173,8 +10166,5 @@ i.loading {
     #newGuess #footer .col i {
       font-size: 25px; }
   #newGuess #footer button {
-    border: 2px solid #886aea;
-    background: none;
-    color: #886aea;
     font-weight: bolder;
     width: 100%; }
