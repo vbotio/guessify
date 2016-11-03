@@ -1,7 +1,8 @@
 {
-  "name": "HelloIonic",
+  "name": "guessify",
   "private": "true",
   "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.3.1"
+    "ionic": "driftyco/ionic-bower#1.3.1",
+    "ionic-ajax-interceptor": "^1.3.0"
   }
 }
