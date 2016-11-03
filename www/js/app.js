@@ -1,18 +1,30 @@
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.factory'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-interceptor'])
 
 .run(function($ionicPlatform, $rootScope) {
-  $ionicPlatform.ready(function() {
 
-    if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
+    $ionicPlatform.ready(function() {
+        if (window.cordova && window.cordova.plugins.Keyboard) {
+            cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+            cordova.plugins.Keyboard.disableScroll(true);
+        }
+        if (window.StatusBar) {
+            // org.apache.cordova.statusbar required
+            StatusBar.styleDefault();
+        }
+    });
+})
+.run(function(AjaxInterceptor) {
+    AjaxInterceptor.run();
+})
+.config(function(AjaxInterceptorProvider){
+    AjaxInterceptorProvider.config({
+        title: "",
+        defaultMessage: '',
+        transformResult: function(data) {
+            data.someKey = "algum valor";
+            return data;
+        }
+    })
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
