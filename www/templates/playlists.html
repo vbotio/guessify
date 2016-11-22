@@ -6,7 +6,7 @@
       <a href="#/app/newCard"><h1 class="plus"> + </h1></a>
     </ion-nav-buttons>
     <ion-content>
-  	    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+  	    <ion-refresher pulling-text="Pull to refresh" on-hold="onHold()" on-refresh="doRefresh()"></ion-refresher>
         <ion-list>
             <ion-item ng-repeat="card in cards" href="#/app/playlists/{{card.id}}" class="card-wrapper">
                 <div class="card" style="background: url({{card.img}}); background-size:100%;">
@@ -17,7 +17,7 @@
         	        	</p>
         	        	<p class="essay">{{card.title}}</p>
         				<div class="footWrapper">
-        					<div class="thumbsUp"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
+        					<div class="thumbsUp" ng-click="sumLike()"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
         					<div class="comments">{{card.comments}}</div>
         					<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
         				</div>

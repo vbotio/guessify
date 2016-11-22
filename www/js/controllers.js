@@ -28,16 +28,21 @@ angular.module('starter.controllers', ['ionic'])
     }
 })
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture) {
     $scope.cards = [];
     $ionicHistory.clearHistory();
     $http({
         method: 'GET',
-        url: "http://www.mocky.io/v2/57e976ff0f00007d1f843a91"
+        url: "http://www.mocky.io/v2/5820aab70f0000cf15c7388a"
     }).then(function(response){
         for (var i in response.data) {
             $scope.cards.push(response.data[i]);
         }
+    })
+    $ionicGesture.on("hold", function(e){
+        $scope.$apply(function(){
+            console.log("hold");
+        })
     })
 
 })
