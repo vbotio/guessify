@@ -35,16 +35,11 @@ angular.module('starter.controllers', ['ionic'])
         method: 'GET',
         url: "http://www.mocky.io/v2/5820aab70f0000cf15c7388a"
     }).then(function(response){
+        console.log("playlists", response);
         for (var i in response.data) {
             $scope.cards.push(response.data[i]);
         }
     })
-    $ionicGesture.on("hold", function(e){
-        $scope.$apply(function(){
-            console.log("hold");
-        })
-    })
-
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
