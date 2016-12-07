@@ -28,18 +28,18 @@ angular.module('starter.controllers', ['ionic'])
     }
 })
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture) {
     $scope.cards = [];
     $ionicHistory.clearHistory();
     $http({
         method: 'GET',
         url: "https://ndamus.herokuapp.com/api/guess/all"
     }).then(function(response){
+        console.log("playlists", response);
         for (var i in response.data) {
             $scope.cards.push(response.data[i]);
         }
     })
-
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
