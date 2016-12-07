@@ -13,7 +13,7 @@
                 	<div class="inner-wrapper">
         	        	<img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
         	        	<p class="author">{{card.author}} <br>
-        								  {{card.datePosted}}
+        								  {{card.datePosted | date}}
         	        	</p>
         	        	<p class="essay">{{card.title}}</p>
         				<div class="footWrapper">

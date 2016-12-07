@@ -33,7 +33,7 @@ angular.module('starter.controllers', ['ionic'])
     $ionicHistory.clearHistory();
     $http({
         method: 'GET',
-        url: "http://www.mocky.io/v2/57e976ff0f00007d1f843a91"
+        url: "https://ndamus.herokuapp.com/api/guess/all"
     }).then(function(response){
         for (var i in response.data) {
             $scope.cards.push(response.data[i]);
@@ -92,8 +92,26 @@ angular.module('starter.controllers', ['ionic'])
         $scope.loading = false;
     })
 })
-.controller('newCardCtrl', function($scope, $http, $rootScope, $window) {
-    
+.controller('newCardCtrl', function($scope, $http, $rootScope, $window, $ionicPopup) {
+    $scope.params = {
+        title: ""
+    }
+    $scope.submit = function() {
+        $http({
+            method: "POST",
+            headers: {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            url: "https://ndamus.herokuapp.com/api/guess",
+            data: "title=" + $scope.params.title
+            
+        }).then(function(response) {
+            var alertPopup = $ionicPopup.alert({
+                title: "",
+                template: response.data.message
+            });
+        })
+    }
 })
 .controller('connectionCtrl', function($scope, $http, $rootScope, $window){
 
