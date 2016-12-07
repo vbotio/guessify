@@ -11,6 +11,8 @@ To start developing in this project, you need to install 4 main dependencies.
 
 ** 5) After all dependecies installed, you should execute in your prompt ```npm install``` **
 
-** 6) execute  ``` bower install ``` **
+** 6) run ``` npm install -g bower ``` **
+
+** 7) execute  ``` bower install ``` **
 
 to initialize the application, in your terminal you should execute ``` ionic serve ``` command, and to run gulp to watch your sass and js files, execute the command ``` gulp watch ```
