@@ -1,5 +1,5 @@
 # README #
-To start developing in this project, you need to install 4 main dependencies.
+To start developing in this project, you need to install 7 main dependencies.
 
 ** 1) [NodeJS](https://nodejs.org/en/download/) **
 
