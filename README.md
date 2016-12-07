@@ -9,6 +9,8 @@ To start developing in this project, you need to install 4 main dependencies.
 
 ** 4) [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) **
 
-5) After all dependecies installed, you should execute in your prompt ```npm install```
+** 5) After all dependecies installed, you should execute in your prompt ```npm install```
+
+** 6) execute  ``` bower install ```
 
 to initialize the application, in your terminal you should execute ``` ionic serve ``` command, and to run gulp to watch your sass and js files, execute the command ``` gulp watch ```
