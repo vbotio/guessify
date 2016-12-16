@@ -2,6 +2,9 @@
   "name": "guessify",
   "version": "1.1.1",
   "description": "guessify: An Ionic project",
+  "config": {
+    "unsafe-perm": true
+  },
   "dependencies": {
     "express": "^4.14.0",
     "gulp": "^3.5.6",
