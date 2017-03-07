@@ -31,19 +31,30 @@ angular.module('starter.controllers', ['ionic'])
 .controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture) {
     $scope.cards = [];
     $ionicHistory.clearHistory();
+    $scope.init = init;
     $scope.sumLike = sumLike;
     $scope.sumDislike = sumDislike;
-    
-    $http({
-        method: 'GET',
-        url: "https://ndamus.herokuapp.com/api/guess/all"
-    }).then(function(response){
-        console.log("playlists", response);
-        for (var i in response.data) {
-            $scope.cards.push(response.data[i]);
-        }
-    })
+    $scope.doRefresh = doRefresh;
 
+    init();
+
+    function init() {
+        $http({
+            method: 'GET',
+            url: "https://ndamus.herokuapp.com/api/guess/all"
+        }).then(function(response){
+            console.log("playlists", response);
+            for (var i in response.data) {
+                $scope.cards.push(response.data[i]);
+            }
+        })    
+    }
+
+    function doRefresh() {
+        init();
+        $scope.$broadcast("scroll.refreshComplete")
+    }
+    
     function sumLike() {
         $http({
             method: "POST",

@@ -6,7 +6,7 @@
         <a href="#/app/newCard"><h1 class="plus"> + </h1></a>
     </ion-nav-buttons>
     <ion-content>
-  	    <ion-refresher pulling-text="Pull to refresh" on-hold="onHold()" on-refresh="doRefresh()"></ion-refresher>
+  	    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
         <ul>
             <li ng-repeat="card in cards" class="card-wrapper">
                 <div class="card" style="background: url({{card.img}}); background-size:100%;">
