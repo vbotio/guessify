@@ -11,7 +11,7 @@
             <li ng-repeat="card in cards" class="card-wrapper">
                 <div class="card" style="background: url({{card.img}}); background-size:100%;">
                     <div class="inner-wrapper">
-                        <a href="#/app/playlists/{{card.id}}">
+                        <a href="#/app/playlists/{{card.id}}" on-hold="onHold()">
                             <img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
                             <p class="author">{{card.author}}<br>
                                               {{card.datePosted | date}}

@@ -28,17 +28,18 @@ angular.module('starter.controllers', ['ionic'])
     }
 })
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture) {
-    $scope.cards = [];
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture, $ionicActionSheet, $timeout) {
     $ionicHistory.clearHistory();
     $scope.init = init;
     $scope.sumLike = sumLike;
     $scope.sumDislike = sumDislike;
     $scope.doRefresh = doRefresh;
+    $scope.onHold = onHold;
 
     init();
 
     function init() {
+        $scope.cards = [];
         $http({
             method: 'GET',
             url: "https://ndamus.herokuapp.com/api/guess/all"
@@ -67,6 +68,23 @@ angular.module('starter.controllers', ['ionic'])
 
     function sumDislike() {
         alert("dislike");
+    }
+
+    function onHold() {
+        $ionicActionSheet.show({
+            buttons: [
+                { text: 'report this' }
+            ], 
+            destructiveText: 'Delete',
+            titleText: '',
+            cancelText: 'Cancel',
+            cancel: function() {
+                  hideSheet();
+            },
+            buttonClicked: function(index) {
+               return true;
+            }
+        });
     }
 })
 

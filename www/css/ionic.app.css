@@ -9867,7 +9867,7 @@ a.button {
           float: left;
           margin-right: 5px;
           height: 40px; }
-        .card-wrapper .card .inner-wrapper a p {
+        .card-wrapper .card .inner-wrapper a p.author {
           white-space: normal;
           height: 40px;
           position: absolute;
