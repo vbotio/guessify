@@ -3,27 +3,29 @@
         <img src="img/ben-avatar.png" alt="avatar" class="avatar-profile ion-navicon" menu-toggle="left">
     </ion-nav-buttons>
     <ion-nav-buttons side="right" class="item">
-      <a href="#/app/newCard"><h1 class="plus"> + </h1></a>
+        <a href="#/app/newCard"><h1 class="plus"> + </h1></a>
     </ion-nav-buttons>
     <ion-content>
   	    <ion-refresher pulling-text="Pull to refresh" on-hold="onHold()" on-refresh="doRefresh()"></ion-refresher>
-        <ion-list>
-            <ion-item ng-repeat="card in cards" href="#/app/playlists/{{card.id}}" class="card-wrapper">
+        <ul>
+            <li ng-repeat="card in cards" class="card-wrapper">
                 <div class="card" style="background: url({{card.img}}); background-size:100%;">
-                	<div class="inner-wrapper">
-        	        	<img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
-        	        	<p class="author">{{card.author}} <br>
-        								  {{card.datePosted | date}}
-        	        	</p>
-        	        	<p class="essay">{{card.title}}</p>
-        				<div class="footWrapper">
-        					<div class="thumbsUp" ng-click="sumLike()"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
-        					<div class="comments">{{card.comments}}</div>
-        					<div class="thumbsDown"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
-        				</div>
-                	</div>
+                    <div class="inner-wrapper">
+                        <a href="#/app/playlists/{{card.id}}">
+                            <img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
+                            <p class="author">{{card.author}}<br>
+                                              {{card.datePosted | date}}
+                            </p>
+                            <p class="essay">{{card.title}}</p>
+                        </a>
+                        <div class="footWrapper">
+                            <div class="thumbsUp" ng-click="sumLike()"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
+                            <div class="comments">{{card.comments}}</div>
+                            <div class="thumbsDown" ng-click="sumDislike"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
+                        </div>
+                    </div>
                 </div>
-            </ion-item>
-        </ion-list>
+            </li>
+        </ul>
     </ion-content>
 </ion-view>

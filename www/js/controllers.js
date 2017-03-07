@@ -31,6 +31,9 @@ angular.module('starter.controllers', ['ionic'])
 .controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture) {
     $scope.cards = [];
     $ionicHistory.clearHistory();
+    $scope.sumLike = sumLike;
+    $scope.sumDislike = sumDislike;
+    
     $http({
         method: 'GET',
         url: "https://ndamus.herokuapp.com/api/guess/all"
@@ -40,6 +43,20 @@ angular.module('starter.controllers', ['ionic'])
             $scope.cards.push(response.data[i]);
         }
     })
+
+    function sumLike() {
+        $http({
+            method: "POST",
+            url: "https://ndamus.herokuapp.com/api/up"
+        }).then(function(response) {
+            console.log(response);
+        })
+        alert("like");
+    }
+
+    function sumDislike() {
+        alert("dislike");
+    }
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
