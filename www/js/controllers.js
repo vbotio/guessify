@@ -28,7 +28,7 @@ angular.module('starter.controllers', ['ionic'])
     }
 })
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicGesture, $ionicActionSheet, $timeout) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout) {
     $ionicHistory.clearHistory();
     $scope.init = init;
     $scope.sumLike = sumLike;
@@ -37,6 +37,14 @@ angular.module('starter.controllers', ['ionic'])
     $scope.onHold = onHold;
 
     init();
+
+    $ionicModal.fromTemplateUrl('my-modal.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    }).then(function(modal){
+        $scope.modal = modal;
+    })
+
 
     function init() {
         $scope.cards = [];
