@@ -1,7 +1,7 @@
 angular.module('starter.controllers', ['ionic'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
+    $rootScope.apiUrl = "https://ndamus.herokuapp.com/api/guess/";
 })
 
 .controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
@@ -30,6 +30,7 @@ angular.module('starter.controllers', ['ionic'])
 
 .controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout) {
     $ionicHistory.clearHistory();
+    $scope.cards = [];
     $scope.init = init;
     $scope.sumLike = sumLike;
     $scope.sumDislike = sumDislike;
@@ -47,10 +48,9 @@ angular.module('starter.controllers', ['ionic'])
 
 
     function init() {
-        $scope.cards = [];
         $http({
             method: 'GET',
-            url: "https://ndamus.herokuapp.com/api/guess/all"
+            url: $rootScope.apiUrl + "all"
         }).then(function(response){
             console.log("playlists", response);
             for (var i in response.data) {
@@ -64,14 +64,16 @@ angular.module('starter.controllers', ['ionic'])
         $scope.$broadcast("scroll.refreshComplete")
     }
     
-    function sumLike() {
+    function sumLike($event) {
+        var _id = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id");
+        var elem = angular.element($event.currentTarget)[0].innerText;
+        console.log(Number(elem) + Number(1));
         $http({
-            method: "POST",
-            url: "https://ndamus.herokuapp.com/api/up"
+            method: "PUT",
+            url: $rootScope.apiUrl + _id + "/thumbup"
         }).then(function(response) {
-            console.log(response);
+            console.log(response);        
         })
-        alert("like");
     }
 
     function sumDislike() {
@@ -156,8 +158,8 @@ angular.module('starter.controllers', ['ionic'])
             headers: {
                 "content-type": "application/x-www-form-urlencoded"
             },
-            url: "https://ndamus.herokuapp.com/api/guess",
-            data: "title=" + $scope.params.title
+            url:    $rootScope.apiUrl,
+            data:   "title=" + $scope.params.title
             
         }).then(function(response) {
             var alertPopup = $ionicPopup.alert({

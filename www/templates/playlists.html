@@ -11,8 +11,8 @@
         <ul>
             <li ng-repeat="card in cards" class="card-wrapper">
                 <div class="card" style="background: url({{card.img}}); background-size:100%;">
-                    <div class="inner-wrapper">
-                        <a href="#/app/playlists/{{card.id}}" on-hold="onHold()">
+                    <div class="inner-wrapper" data-id="{{card._id}}">
+                        <a href="#/app/playlists/{{card._id}}" on-hold="onHold()">
                             <img ng-src="{{card.authorPhoto}}" alt="Author profile photo">
                             <p class="author">{{card.author}}<br>
                                               {{card.datePosted | date}}
@@ -20,7 +20,7 @@
                             <p class="essay">{{card.title}}</p>
                         </a>
                         <div class="footWrapper">
-                            <div class="thumbsUp" ng-click="sumLike()"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
+                            <div class="thumbsUp" ng-click="sumLike($event)"><i class="icon ion-arrow-up-c"></i>{{card.thumbsUp}}</div>
                             <div class="comments">{{card.comments}}</div>
                             <div class="thumbsDown" ng-click="sumDislike()"><i class="icon ion-arrow-down-c"></i>{{card.thumbsDown}}</div>
                         </div>
@@ -32,7 +32,7 @@
     <script id="my-modal.html" type="text/ng-template">
         <ion-modal-view>
             <ion-header-bar>
-                <h1 class="title">alalallrlalrral</h1>
+                <h1 class="title">create new card</h1>
             </ion-header-bar>
             <ion-content>   
                 <div class="row">
