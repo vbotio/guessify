@@ -65,14 +65,18 @@ angular.module('starter.controllers', ['ionic'])
     }
     
     function sumLike($event) {
-        var _id = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id");
-        var elem = angular.element($event.currentTarget)[0].innerText;
-        console.log(Number(elem) + Number(1));
+        var _id = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
+            elem = angular.element($event.currentTarget)[0].innerText,
+            sum = Number(elem) + Number(1);
+
+        angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-up-c"></i>'+sum;
+
         $http({
             method: "PUT",
             url: $rootScope.apiUrl + _id + "/thumbup"
         }).then(function(response) {
-            console.log(response);        
+            console.log(response);
+            console.log(angular.element($event.currentTarget));
         })
     }
 
