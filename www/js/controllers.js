@@ -114,7 +114,7 @@ angular.module('starter.controllers', ['ionic'])
                 method: "PUT",
                 url: $rootScope.apiUrl + _id + "/thumbdown"
             }).then(function(response) {
-                console.log(response, angular.element($event.currentTarget));
+                console.log('disliked');
             })
         } else if(click === "disliked") {
             
@@ -127,7 +127,7 @@ angular.module('starter.controllers', ['ionic'])
                 method: "PUT",
                 url: $rootScope.apiUrl + _id + "/thumbdown"
             }).then(function(response) {
-                console.log(response, angular.element($event.currentTarget));
+                console.log('remove dislike');
             })
         }
         
