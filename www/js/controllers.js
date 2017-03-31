@@ -33,7 +33,7 @@ angular.module('starter.controllers', ['ionic'])
     $scope.cards = [];
     $scope.init = init;
     $scope.sumLike = sumLike;
-    $scope.sumDislike = sumDislike;
+    $scope.subLike = subLike;
     $scope.doRefresh = doRefresh;
     $scope.onHold = onHold;
 
@@ -65,23 +65,72 @@ angular.module('starter.controllers', ['ionic'])
     }
     
     function sumLike($event) {
-        var _id = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
-            elem = angular.element($event.currentTarget)[0].innerText,
-            sum = Number(elem) + Number(1);
+        var click = angular.element($event.currentTarget)[0].getAttribute("data-click"),
+            _id =   angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
+            elem =  angular.element($event.currentTarget)[0].innerText
+        
+        console.log(click);
 
-        angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-up-c"></i>'+sum;
 
-        $http({
-            method: "PUT",
-            url: $rootScope.apiUrl + _id + "/thumbup"
-        }).then(function(response) {
-            console.log(response);
-            console.log(angular.element($event.currentTarget));
-        })
+        if(click === null || click === "") {
+            var sum = Number(elem) + Number(1);
+
+            angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-up-c"></i>'+sum;
+            angular.element($event.currentTarget)[0].setAttribute("data-click", "liked");
+            $http({
+                method: "PUT",
+                url: $rootScope.apiUrl + _id + "/thumbup"
+            }).then(function(response) {
+                console.log("liked")
+            })    
+        } else if(click === "liked") {
+            
+            var sum = Number(elem) - Number(1);
+
+            angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-up-c"></i>'+sum;
+            angular.element($event.currentTarget)[0].setAttribute("data-click", "");
+
+            $http({
+                method: "PUT",
+                url: $rootScope.apiUrl + _id + "/thumbup"
+            }).then(function(response) {
+                console.log("remove like");
+            })
+        }
     }
 
-    function sumDislike() {
-        alert("dislike");
+    function subLike($event) {
+        var click = angular.element($event.currentTarget)[0].getAttribute("data-click"),   
+            _id = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
+            elem = angular.element($event.currentTarget)[0].innerText;
+
+        if (click === null || click === "") {
+            sub = Number(elem) + Number(1);
+        
+            angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-down-c"></i>'+sub;
+            angular.element($event.currentTarget)[0].setAttribute("data-click", "disliked");
+
+            $http({
+                method: "PUT",
+                url: $rootScope.apiUrl + _id + "/thumbdown"
+            }).then(function(response) {
+                console.log(response, angular.element($event.currentTarget));
+            })
+        } else if(click === "disliked") {
+            
+            var sub = Number(elem) - Number(1);
+
+            angular.element($event.currentTarget)[0].innerHTML = '<i class="icon ion-arrow-down-c"></i>'+sub;
+            angular.element($event.currentTarget)[0].setAttribute("data-click", "");
+
+            $http({
+                method: "PUT",
+                url: $rootScope.apiUrl + _id + "/thumbdown"
+            }).then(function(response) {
+                console.log(response, angular.element($event.currentTarget));
+            })
+        }
+        
     }
 
     function onHold() {

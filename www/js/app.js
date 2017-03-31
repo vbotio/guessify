@@ -88,7 +88,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
             'menuContent': {
                 templateUrl: 'templates/login.html',
                 controller: 'loginCtrl'
-
             }
         }
     })
@@ -110,6 +109,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
             }
         }
     })
-    // $urlRouterProvider.otherwise('/app/playlists');
     $urlRouterProvider.otherwise('/app/login');
 });
