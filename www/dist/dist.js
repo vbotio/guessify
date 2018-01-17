@@ -3,30 +3,7 @@ angular.module('starter.controllers', ['ionic'])
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
     $rootScope.apiUrl = "https://ndamus.herokuapp.com/api/guess/";
 })
-
-.controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
-    $scope.loginData = {};
-    $scope.loginData.username = null;
-    $scope.loginData.password = null;
-
-    $scope.doLogin = doLogin;
-
-    function doLogin() {
-
-        if($scope.loginData.username && $scope.loginData.password) {
-            $ionicHistory.clearHistory();
-            $state.go('app.playlists')
-        } else {
-            var alertPopup = $ionicPopup.alert({
-                title: 'err',
-                template: 'Usuário ou senha incorreto'
-            });
-            alertPopup.then(function(res) {
-
-            })
-        }
-    }
-})
+// angular.module('starter.controllers', ['ionic'])
 
 .controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout) {
     $ionicHistory.clearHistory();
@@ -150,6 +127,7 @@ angular.module('starter.controllers', ['ionic'])
         });
     }
 })
+// angular.module('starter.controllers', ['ionic'])
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
     $scope.cardDetail = [];
@@ -163,6 +141,54 @@ angular.module('starter.controllers', ['ionic'])
         }
         console.log($scope.cardDetail);
     })
+})
+// angular.module('starter.controllers', ['ionic'])
+
+.controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
+    $scope.loginData = {};
+    $scope.loginData.username = null;
+    $scope.loginData.password = null;
+
+    $scope.doLogin = doLogin;
+
+    function doLogin() {
+
+        if($scope.loginData.username && $scope.loginData.password) {
+            $ionicHistory.clearHistory();
+            $state.go('app.playlists')
+        } else {
+            var alertPopup = $ionicPopup.alert({
+                title: 'err',
+                template: 'Usuário ou senha incorreto'
+            });
+            alertPopup.then(function(res) {
+
+            })
+        }
+    }
+})
+// angular.module('starter.controllers', ['ionic'])
+
+.controller('newCardCtrl', function($scope, $http, $rootScope, $window, $ionicPopup) {
+    $scope.params = {
+        title: ""
+    }
+    $scope.submit = function() {
+        $http({
+            method: "POST",
+            headers: {
+                "content-type": "application/x-www-form-urlencoded"
+            },
+            url:    $rootScope.apiUrl,
+            data:   "title=" + $scope.params.title
+            
+        }).then(function(response) {
+            var alertPopup = $ionicPopup.alert({
+                title: "",
+                template: response.data.message
+            });
+        })
+    }
 })
 
 .controller('profileCtrl', function($scope, $state, $http, $rootScope, $ionicPopup) {
@@ -201,28 +227,3 @@ angular.module('starter.controllers', ['ionic'])
         $scope.loading = false;
     })
 })
-.controller('newCardCtrl', function($scope, $http, $rootScope, $window, $ionicPopup) {
-    $scope.params = {
-        title: ""
-    }
-    $scope.submit = function() {
-        $http({
-            method: "POST",
-            headers: {
-                "content-type": "application/x-www-form-urlencoded"
-            },
-            url:    $rootScope.apiUrl,
-            data:   "title=" + $scope.params.title
-            
-        }).then(function(response) {
-            var alertPopup = $ionicPopup.alert({
-                title: "",
-                template: response.data.message
-            });
-        })
-    }
-})
-.controller('connectionCtrl', function($scope, $http, $rootScope, $window){
-
-})
-

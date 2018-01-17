@@ -8,10 +8,20 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-    sass: ['./scss/**/*.scss']
+    sass: ['./scss/**/*.scss'],
+    js: [
+        './www/js/*.controller.js'
+    ]
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'js']);
+
+gulp.task("js", function() {
+    gulp.src(paths.js)
+    .pipe(concat("dist.js"))
+    .on("error", sass.logError)
+    .pipe(gulp.dest("./www/dist"))
+})
 
 gulp.task('sass', function(done) {
     gulp.src('./scss/ionic.app.scss')
