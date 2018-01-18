@@ -1,4 +1,4 @@
-// angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers')
 
 .controller('newCardCtrl', function($scope, $http, $rootScope, $window, $ionicPopup) {
     $scope.params = {
@@ -20,4 +20,4 @@
             });
         })
     }
-})
+});

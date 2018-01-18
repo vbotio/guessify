@@ -1,6 +1,6 @@
-// angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers')
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout, dashboardService) {
     $ionicHistory.clearHistory();
     $scope.cards = [];
     $scope.init = init;
@@ -20,15 +20,12 @@
 
 
     function init() {
-        $http({
-            method: 'GET',
-            url: $rootScope.apiUrl + "all"
-        }).then(function(response){
-            console.log("playlists", response);
-            for (var i in response.data) {
-                $scope.cards.push(response.data[i]);
+        dashboardService.getData().then(function(response) {
+            for(var i in response) {
+                $scope.cards.push(response[i]);
             }
-        })    
+            console.log($scope.cards)
+        })   
     }
 
     function doRefresh() {
@@ -38,8 +35,8 @@
     
     function sumLike($event) {
         var click = angular.element($event.currentTarget)[0].getAttribute("data-click"),
-            _id =   angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
-            elem =  angular.element($event.currentTarget)[0].innerText
+            _id   = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
+            elem  = angular.element($event.currentTarget)[0].innerText
         
         console.log(click);
 
@@ -121,4 +118,4 @@
             }
         });
     }
-})
+});

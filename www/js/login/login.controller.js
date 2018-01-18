@@ -1,4 +1,4 @@
-// angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers')
 
 .controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
     $scope.loginData = {};

@@ -1,11 +1,26 @@
 angular.module('starter.controllers', ['ionic'])
+.factory("dashboardService", ['$http', '$rootScope', function($http, $rootScope) {
+	return {
+		getData: function() {
+			return $http.get($rootScope.apiUrl + "all").then(function(response) {
+				return response.data;
+			})
+		}
+	}
+}]);
+
+//item service
+//login service
+// new card service
+//profile service
+angular.module('starter.controllers')
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
     $rootScope.apiUrl = "https://ndamus.herokuapp.com/api/guess/";
-})
-// angular.module('starter.controllers', ['ionic'])
+});
+angular.module('starter.controllers')
 
-.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout) {
+.controller('PlaylistsCtrl', function($scope, $http, $rootScope, $ionicHistory, $ionicModal, $ionicGesture, $ionicActionSheet, $timeout, dashboardService) {
     $ionicHistory.clearHistory();
     $scope.cards = [];
     $scope.init = init;
@@ -25,15 +40,12 @@ angular.module('starter.controllers', ['ionic'])
 
 
     function init() {
-        $http({
-            method: 'GET',
-            url: $rootScope.apiUrl + "all"
-        }).then(function(response){
-            console.log("playlists", response);
-            for (var i in response.data) {
-                $scope.cards.push(response.data[i]);
+        dashboardService.getData().then(function(response) {
+            for(var i in response) {
+                $scope.cards.push(response[i]);
             }
-        })    
+            console.log($scope.cards)
+        })   
     }
 
     function doRefresh() {
@@ -43,8 +55,8 @@ angular.module('starter.controllers', ['ionic'])
     
     function sumLike($event) {
         var click = angular.element($event.currentTarget)[0].getAttribute("data-click"),
-            _id =   angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
-            elem =  angular.element($event.currentTarget)[0].innerText
+            _id   = angular.element($event.currentTarget).parent().parent()[0].getAttribute("data-id"),
+            elem  = angular.element($event.currentTarget)[0].innerText
         
         console.log(click);
 
@@ -126,12 +138,12 @@ angular.module('starter.controllers', ['ionic'])
             }
         });
     }
-})
-// angular.module('starter.controllers', ['ionic'])
+});
+angular.module('starter.controllers')
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
     $scope.cardDetail = [];
-
+    
     $http({
         method: "GET",
         url: "http://www.mocky.io/v2/57eac524130000711f63dd76"
@@ -141,8 +153,8 @@ angular.module('starter.controllers', ['ionic'])
         }
         console.log($scope.cardDetail);
     })
-})
-// angular.module('starter.controllers', ['ionic'])
+});
+angular.module('starter.controllers')
 
 .controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
     $scope.loginData = {};
@@ -167,7 +179,7 @@ angular.module('starter.controllers', ['ionic'])
         }
     }
 })
-// angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers')
 
 .controller('newCardCtrl', function($scope, $http, $rootScope, $window, $ionicPopup) {
     $scope.params = {
@@ -189,8 +201,8 @@ angular.module('starter.controllers', ['ionic'])
             });
         })
     }
-})
-
+});
+angular.module("starter.controllers")
 .controller('profileCtrl', function($scope, $state, $http, $rootScope, $ionicPopup) {
     $scope.profileDetail = [];
     $scope.profileDetailPrevOmens = [];
@@ -226,4 +238,4 @@ angular.module('starter.controllers', ['ionic'])
     }).finally(function(response) {
         $scope.loading = false;
     })
-})
+});

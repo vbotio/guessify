@@ -1,8 +1,8 @@
-// angular.module('starter.controllers', ['ionic'])
+angular.module('starter.controllers')
 
 .controller('PlaylistCtrl', function($scope, $stateParams, $http, $rootScope) {
     $scope.cardDetail = [];
-
+    
     $http({
         method: "GET",
         url: "http://www.mocky.io/v2/57eac524130000711f63dd76"
@@ -12,4 +12,4 @@
         }
         console.log($scope.cardDetail);
     })
-})
+});

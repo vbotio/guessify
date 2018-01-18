@@ -1,4 +1,4 @@
-
+angular.module("starter.controllers")
 .controller('profileCtrl', function($scope, $state, $http, $rootScope, $ionicPopup) {
     $scope.profileDetail = [];
     $scope.profileDetailPrevOmens = [];
@@ -34,4 +34,4 @@
     }).finally(function(response) {
         $scope.loading = false;
     })
-})
+});
