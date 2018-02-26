@@ -1,5 +1,5 @@
 angular.module('starter.controllers')
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
+.controller('AppCtrl', ['$scope', '$ionicModal', '$timeout', '$rootScope', function($scope, $ionicModal, $timeout, $rootScope) {
     $rootScope.apiUrl = "https://ndamus.herokuapp.com/api/guess/";
-});
+}]);

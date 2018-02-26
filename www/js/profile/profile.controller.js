@@ -1,5 +1,5 @@
 angular.module("starter.controllers")
-.controller('profileCtrl', function($scope, $state, $http, $rootScope, $ionicPopup) {
+.controller('profileCtrl', ['$scope', '$state', '$http', '$rootScope', '$ionicPopup', function($scope, $state, $http, $rootScope, $ionicPopup) {
     $scope.profileDetail = [];
     $scope.profileDetailPrevOmens = [];
     $scope.profileDetailSocialMedia = [];
@@ -34,4 +34,4 @@ angular.module("starter.controllers")
     }).finally(function(response) {
         $scope.loading = false;
     })
-});
+}]);

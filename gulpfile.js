@@ -11,6 +11,7 @@ var sh = require('shelljs');
 var paths = {
     sass: ['./scss/**/*.scss'],
     js: [
+        './www/js/**/*.config.js',
         './www/js/**/*.service.js',
         './www/js/**/*.controller.js'
     ]
@@ -40,7 +41,8 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(paths, ['sass', 'js']);
+    gulp.watch(paths.sass, ['sass']);
+    gulp.watch(paths.js, ['js']);
 });
 
 gulp.task('install', ['git-check'], function() {
