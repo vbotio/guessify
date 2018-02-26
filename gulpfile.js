@@ -3,6 +3,7 @@ var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
@@ -20,6 +21,7 @@ gulp.task('default', ['sass', 'js']);
 gulp.task("js", function() {
     gulp.src(paths.js)
     .pipe(concat("dist.js"))
+    .pipe(uglify())
     .on("error", sass.logError)
     .pipe(gulp.dest("./www/dist"))
 })
