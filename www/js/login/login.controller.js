@@ -1,25 +1,31 @@
 angular.module('starter.controllers')
 
 .controller('loginCtrl', function($scope, $state, $http, $rootScope, $location, $ionicPopup, $timeout, $ionicHistory) {
-    $scope.loginData = {};
-    $scope.loginData.username = null;
-    $scope.loginData.password = null;
-
     $scope.doLogin = doLogin;
-
+    $rootScope.profileData = {};
+    
     function doLogin() {
-
-        if($scope.loginData.username && $scope.loginData.password) {
-            $ionicHistory.clearHistory();
-            $state.go('app.playlists')
-        } else {
-            var alertPopup = $ionicPopup.alert({
-                title: 'err',
-                template: 'Usuário ou senha incorreto'
-            });
-            alertPopup.then(function(res) {
-
-            })
-        }
+        FB.getLoginStatus(function(response) {
+        	if(response.status === 'connected') {
+        		console.log("already logged in, just cached response")
+        		$state.go("app.profile")
+        	} else {
+        		FB.login(function(response) {
+        		    if(response.authResponse) {
+        		    	$scope.accessToken = response.authResponse.accessToken;
+        		    	FB.api('/me?fields=id, name, about, email, picture.width(360).height(360)', function(res) {
+        		    		// console.log("api", res);
+        		    		$rootScope.profileData.id = res.id; 
+        		    		$rootScope.profileData.name = res.name;
+        		    		$rootScope.profileData.about = res.about;
+        		    		$rootScope.profileData.email = res.email;
+        		    		$rootScope.profileData.picture = res.picture.url;
+        		    		console.log("api", $rootScope.profileData);
+        		    	})
+        		    }
+        		})		
+        	}
+        })
+        
     }
 })

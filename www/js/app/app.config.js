@@ -12,6 +12,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
             StatusBar.styleDefault();
         }
     });
+
+    
 })
 .run(function(AjaxInterceptor) {
     AjaxInterceptor.run();
