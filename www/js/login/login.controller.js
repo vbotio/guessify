@@ -29,9 +29,6 @@ angular.module('starter.controllers')
         		console.log("already logged in, just cached response")
         		// $state.go("app.profile")
         		FB.logout(window.localStorage.getItem("accessToken").JSON.stringify());
-        		$timeout(function() {
-        			loginFacebook();
-        		}, 2000);
         	} else {
         		loginFacebook();
         	}

@@ -11,7 +11,6 @@ angular.module("starter.controllers")
         url: "http://www.mocky.io/v2/57ec1104110000aa212d36a8"
     }).then(function(response){
         $scope.profileDetail = response.data;
-        
         for (var i in response.data.previousOmen) {
             $scope.profileDetailPrevOmens.push(response.data.previousOmen[i])
         }
