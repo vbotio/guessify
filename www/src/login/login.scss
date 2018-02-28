@@ -1,0 +1,40 @@
+#login {
+	background:url(../img/bgLogin.jpg) center center no-repeat;
+	background-size:cover;
+	text-align:center;
+	.logo {
+		margin: 55px 0;
+	}
+	.list {
+		span.forgot {
+			float: right;
+			margin:5px 5px 0 0;
+			color: white;
+			opacity: 0.5;
+		}
+		.item {
+			background: transparent;
+			color: white;
+			border: 0;
+			.icon {
+				font-size: 24px;
+			}
+			span.input-label, input {
+				color:white;
+			}
+		}
+		li.item {
+			margin-top: 110px;
+			background:$royal;
+			border:0;
+		}	
+	}
+	.footer {
+		margin-top: 25px;
+		color: rgba(255,255,255, 0.6);
+		a {
+			color:white;
+			text-decoration:none;
+		}
+	}
+}

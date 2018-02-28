@@ -1,0 +1,24 @@
+#newGuess {
+	.avatar-profile {
+		max-height: 60px;
+	}
+	textarea {
+		width:100%;
+		height:auto;
+		min-height: 125px;
+		resize: none;
+	}
+	#footer {
+		align-items:center;
+		.col {
+			text-align:center;
+			i {
+				font-size: 25px;
+			}	
+		}
+		button {
+			font-weight: bolder;
+			width: 100%;
+		}
+	}
+}

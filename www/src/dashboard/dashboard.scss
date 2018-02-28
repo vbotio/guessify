@@ -1,0 +1,139 @@
+.card-wrapper {
+	font-family: "Open sans", sans-serif;
+	height: 200px;
+	.card {
+		height:100%;
+		position:relative;
+		z-index: 0;
+		margin-top: 10px;
+		&:after {
+			content:"";
+			width:100%;
+			height:100%;
+			position:absolute;
+			background:rgba(0,0,0,0.7);
+			top:0;
+			left:0;
+			z-index: 1;
+		}
+		.inner-wrapper {
+			z-index: 2;
+			position:absolute;
+			width:100%;
+			height:100%;
+			padding:10px;
+			display: flex;
+			flex-wrap: wrap;
+			a {
+				text-decoration: none;
+				color:white;
+				width: 100%;
+				display: flex;
+				flex-wrap:wrap;
+				img {
+					float:left;
+					margin-right:5px;
+					height:40px;
+				}
+				p.author {
+					white-space:normal;
+					height:40px;
+					position: absolute;
+					right: 10px;
+				}
+				.essay {
+					text-align:center;
+					font-weight:500;
+					font-size:15px;
+					margin-top: -45px;
+					width: 100%;
+				}	
+			}
+			
+			.footWrapper {
+				position:absolute;
+				left:0;
+				bottom:0;
+				width:100%;
+				height:50px;
+				display: flex;
+				background:#1e4856;
+				justify-content: space-around;
+				align-items:center;
+				background: #1e4856; /* Old browsers */
+				background: -moz-linear-gradient(left,  #1e4856 0%, #1e4856 50%, #26232e 50%, #26232e 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left,  #1e4856 0%,#1e4856 50%,#26232e 50%,#26232e 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right,  #1e4856 0%,#1e4856 50%,#26232e 50%,#26232e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e4856', endColorstr='#26232e',GradientType=1 ); /* IE6-9 */
+				i {
+					margin-right: 5px;
+					font-size: 18px;
+				}
+				.comments {
+					color:black;
+					width:32px;
+					height:32px;
+					background: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDUzMy4zMzMgNTMzLjMzMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTMzLjMzMyA1MzMuMzMzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI2Ni42NjcsMTYuNzgzYzE0Ny4yNzUsMCwyNjYuNjY3LDk3LjAwNSwyNjYuNjY3LDIxNi42NjdjMCwxMTkuNjYzLTExOS4zOTIsMjE2LjY2Ny0yNjYuNjY3LDIxNi42NjcgICBjLTE0LjE0NCwwLTI4LjAyNi0wLjkwMy00MS41NzUtMi42MjhDMTY3LjgxMiw1MDQuNzcsOTkuNDQsNTE1LjA0MiwzMy4zMzMsNTE2LjU1di0xNC4wMTlDNjkuMDI5LDQ4NS4wNDMsMTAwLDQ1My4xODgsMTAwLDQxNi43ODQgICBjMC01LjA4LTAuMzk1LTEwLjA2OC0xLjEyNy0xNC45NDZDMzguNTYyLDM2Mi4xMTcsMCwzMDEuNDQ1LDAsMjMzLjQ1QzAsMTEzLjc4OSwxMTkuMzkxLDE2Ljc4MywyNjYuNjY3LDE2Ljc4M3oiIGZpbGw9IiNGRkZGRkYiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K) center center;
+					font-size: 14px;
+					font-weight: bolder;
+					text-align: center;
+					line-height: 27px;
+					position:absolute;
+					left:50%;
+					top:50%;
+					margin:-16px 0 0 -16px;
+				}
+				.thumbsUp {
+					color:#1ba7a8;
+					font-weight: bolder;
+
+				}
+				.thumbsDown {
+					color:#ff4365;
+					font-weight: bolder;
+				}
+			}
+		}
+	}
+	.commentsWrapper {
+		float:left;
+		margin:0 10px;
+		width:100%;
+		padding-right: 10px;
+		.head {
+			display: flex;
+			img.profilePhoto {
+				width:30px;
+				height:30px;
+				margin-right:10px;
+			}
+			input {
+				flex:2;
+				margin-right: 20px;
+			}
+		}
+		.commentsContainer {
+			ul {
+				li {
+					margin-bottom: 5px;
+					border-bottom: 1px solid #ccc;
+					padding-bottom: 10px;
+					img {
+						float:left;
+						margin-right: 5px;
+						width: 30px;
+					}
+					.right {
+						p {
+							white-space: normal;
+						}
+						small {
+							margin-left:35px;
+							font-size: 11px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
