@@ -12,8 +12,8 @@ var paths = {
     sass: ['./scss/**/*.scss'],
     js: [
         // './www/js/**/*.config.js',
-        './www/js/**/*.service.js',
-        './www/js/**/*.controller.js'
+        './www/src/**/*.service.js',
+        './www/src/**/*.controller.js'
     ]
 };
 

@@ -57,12 +57,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
             }
         }
     })
-    .state('app.playlists', {
-        url: '/playlists',
+    .state('app.dashboard', {
+        url: '/dashboard',
         views: {
             'menuContent': {
-                templateUrl: 'templates/playlists.html',
-                controller: 'PlaylistsCtrl'
+                templateUrl: 'src/dashboard/dashboard.html',
+                controller: 'dashboardCtrl'
             }
         }
     })
@@ -70,8 +70,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
         url: '/playlists/:playlistId',
         views: {
             'menuContent': {
-                templateUrl: 'templates/playlist.html',
-                controller: 'PlaylistCtrl'
+                templateUrl: 'src/item/item.html',
+                controller: 'itemCtrl'
             }
         }
     })
@@ -79,7 +79,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
         url: '/profile',
         views: {
             'menuContent': {
-                templateUrl: 'templates/profile.html',
+                templateUrl: 'src/profile/profile.html',
                 controller: 'profileCtrl'
             }
         }
@@ -88,7 +88,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
         url: '/login',
         views: {
             'menuContent': {
-                templateUrl: 'templates/login.html',
+                templateUrl: 'src/login/login.html',
                 controller: 'loginCtrl'
             }
         }
@@ -97,17 +97,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-ajax-intercept
         url: '/newCard',
         views: {
             'menuContent': {
-                templateUrl: 'templates/newCard.html',
+                templateUrl: 'src/new-card/newCard.html',
                 controller: 'newCardCtrl'
             }
         }
     })
-    .state('app.connection', {
+    .state('app.badConnection', {
         url: '/badConnection',
         views: {
             'menuContent': {
-                templateUrl: 'templates/badConnection.html',
-                controller: 'connectionCtrl'
+                templateUrl: 'src/bad-connection/badConnection.html',
+                controller: 'badConnection'
             }
         }
     })
